@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './components/App';
+import './stylesheets/index.scss';
+import Root from './components/root';
 import configureStore from './store/store';
 import * as serviceWorker from './serviceWorker';
 
@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.dispatch = store.dispatch;
   window.getState = store.dispatch;
 
-  ReactDOM.render( <App store = { store } />, root);
+  ReactDOM.render( <Root store = { store } />, root);
 });
 
 serviceWorker.unregister();
