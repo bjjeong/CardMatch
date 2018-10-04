@@ -6,7 +6,6 @@ class Card extends Component {
     this.state = {
       clicked: false
     }
-
     this.flipCard = this.flipCard.bind(this);
   }
 
