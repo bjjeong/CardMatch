@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Card from './card';
 
 class Board extends Component {
   constructor(props){
@@ -14,11 +15,12 @@ class Board extends Component {
     return(
       <div className="board-container">
         <div className="playing-area">
-          <ul>
+          <ul className="card-index">
             {cards.map(card => (
-              <li key={card.id}>
-                {card.value}
-              </li>
+              <Card
+                key={card.id}
+                card={card}
+              />
             ))}
           </ul>
         </div>
