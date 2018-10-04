@@ -1,8 +1,13 @@
 // import { merge } from 'lodash';
-import { RECEIVE_CARDS, generateCards } from '../actions/game_actions';
+import { 
+  RECEIVE_CARDS,
+  generateCards
+} from '../actions/game_actions';
 
 let initialState = {
-  cards: generateCards()
+  cards: generateCards(),
+  card1: null,
+  card2: null
 };
 
 const GameReducer = (state = initialState, action) => {
@@ -10,7 +15,6 @@ const GameReducer = (state = initialState, action) => {
 
   switch (action.type) {
     case RECEIVE_CARDS:
-      console.log("am i in here?");
       return action.cards;
     default:
       return state;

@@ -16,8 +16,8 @@ class Board extends Component {
         <div className="playing-area">
           <ul>
             {cards.map(card => (
-              <li key={card}>
-                {card}
+              <li key={card.id}>
+                {card.value}
               </li>
             ))}
           </ul>

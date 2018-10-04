@@ -13,7 +13,11 @@ export const generateCards = () => {
     let cards = [];
 
     for (let i = 0; i < 12; i++) {
-      cards.push(i);
+      let card = {
+        id: i,
+        value: Math.floor(i/2)
+      };
+      cards.push(card);
     }
     return shuffle(cards);
 };
