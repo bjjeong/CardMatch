@@ -20,6 +20,7 @@ class Board extends Component {
               <Card
                 key={card.id}
                 card={card}
+                flipCard={this.props.flipCard}
               />
             ))}
           </ul>

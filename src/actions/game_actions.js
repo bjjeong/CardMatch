@@ -1,13 +1,9 @@
-export const RECEIVE_CARDS = 'RECEIVE_CARDS';
+export const RECEIVE_CARD = 'RECEIVE_CARD';
 
-export const receiveCards = cards => ({
-  type: RECEIVE_CARDS,
-  cards
+export const flipCard = id => ({
+  type: RECEIVE_CARD,
+  id
 });
-
-export const fetchCards = () => dispatch => (
-  generateCards().then(cards => dispatch(receiveCards(cards)))
-);
 
 export const generateCards = () => {
     let cards = [];
@@ -15,7 +11,8 @@ export const generateCards = () => {
     for (let i = 0; i < 12; i++) {
       let card = {
         id: i,
-        value: Math.floor(i/2)
+        value: Math.floor(i/2),
+        up: false
       };
       cards.push(card);
     }

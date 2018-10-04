@@ -1,6 +1,6 @@
-// import { merge } from 'lodash';
+import { merge } from 'lodash';
 import { 
-  RECEIVE_CARDS,
+  RECEIVE_CARD,
   generateCards
 } from '../actions/game_actions';
 
@@ -12,10 +12,11 @@ let initialState = {
 
 const GameReducer = (state = initialState, action) => {
   Object.freeze(state);
+  let newState = merge({}, state);
 
   switch (action.type) {
-    case RECEIVE_CARDS:
-      return action.cards;
+    case RECEIVE_CARD:
+      return merge(newState, {card1: action.value});
     default:
       return state;
   }

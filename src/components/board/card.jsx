@@ -12,6 +12,7 @@ class Card extends Component {
 
   flipCard(id) {
     this.setState({clicked: !this.state.clicked})
+    this.props.flipCard(id);
   }
 
   render() {
