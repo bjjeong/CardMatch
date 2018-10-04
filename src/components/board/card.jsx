@@ -19,7 +19,7 @@ class Card extends Component {
 
     return (
       <li className={"card"} onClick={() => this.flipCard(card.id)}>
-        <div className={`card-value ${this.state.clicked ? 'up' : ''}`}>
+        <div className={`card-value ${this.state.clicked ? 'up' : 'down'}`}>
           {card.value}
         </div>
       </li>
