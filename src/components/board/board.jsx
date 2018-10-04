@@ -1,13 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const Board = props => {
-  return(
-    <div className="board-container">
-      <div className="playing-area">
-      hello
+class Board extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+
+    };
+  }
+  
+  render() {    
+    let { cards } = this.props;
+  
+    return(
+      <div className="board-container">
+        <div className="playing-area">
+          <ul>
+            {cards.map(card => (
+              <li key={card}>
+                {card}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default Board;

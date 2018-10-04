@@ -10,9 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
   let store = configureStore();
 
   window.dispatch = store.dispatch;
-  window.getState = store.dispatch;
+  window.getState = store.getState;
 
-  ReactDOM.render( <Root store = { store } />, root);
+  ReactDOM.render( <Root store={ store } />, root);
 });
 
 serviceWorker.unregister();
