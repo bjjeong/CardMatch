@@ -7,7 +7,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  flipCard: id => dispatch(flipCard(id))
+  flipCard: card => dispatch(flipCard(card))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Board);

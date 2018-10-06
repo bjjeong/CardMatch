@@ -16,7 +16,13 @@ const GameReducer = (state = initialState, action) => {
 
   switch (action.type) {
     case RECEIVE_CARD:
-      return merge(newState, {card1: action.value});
+      if(newState.card1 === null) {
+        return merge(newState, {card1: action.card});
+      } else if(newState.card1 !== null && newState.card2 === null){
+        return merge(newState, {card2: action.card});
+      } else {
+        return merge(newState, {card3: "this should never get filled out"});
+      }
     default:
       return state;
   }

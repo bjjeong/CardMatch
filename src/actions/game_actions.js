@@ -1,8 +1,8 @@
 export const RECEIVE_CARD = 'RECEIVE_CARD';
 
-export const flipCard = id => ({
+export const flipCard = card => ({
   type: RECEIVE_CARD,
-  id
+  card
 });
 
 export const generateCards = () => {

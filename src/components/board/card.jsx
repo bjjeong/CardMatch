@@ -9,16 +9,16 @@ class Card extends Component {
     this.flipCard = this.flipCard.bind(this);
   }
 
-  flipCard(id) {
+  flipCard(card) {
     this.setState({clicked: !this.state.clicked})
-    this.props.flipCard(id);
+    this.props.flipCard(card);
   }
 
   render() {
     let { card } = this.props;
 
     return (
-      <li className={"card"} onClick={() => this.flipCard(card.id)}>
+      <li className={"card"} onClick={() => this.flipCard(card)}>
         <div className={`card-value ${this.state.clicked ? 'up' : 'down'}`}>
           {card.value}
         </div>
