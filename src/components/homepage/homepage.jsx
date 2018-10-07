@@ -7,11 +7,10 @@ const Homepage = props => {
     <div className="homepage">
       <nav>
         <div className="nav-wrapper">
-          <a href="/" className="brand-logo">
+          <a href="/" className="left">
             <div className="logo"></div>
           </a>
-          <ul id="nav-mobile" className="right hide-on-med-and-down">
-            <li><a href="/">Info</a></li>
+          <ul id="nav-mobile" className="right">
             <li><a 
               href="https://www.github.com/bjjeong"
               rel="noopener noreferrer"
