@@ -28,6 +28,16 @@ class Board extends Component {
   
   render() {    
     let { cards } = this.props;
+
+    if(this.state.counter <= 0) {
+      return(
+        <div className="board-container">
+          <div className="message">
+            YOU HAVE FAILED. PLEASE REFRESH PAGE TO PLAY AGAIN
+          </div>
+        </div>
+      );
+    }
   
     return(
       <div className="board-container">
