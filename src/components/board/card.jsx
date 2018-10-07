@@ -10,6 +10,7 @@ class Card extends Component {
   }
 
   flipCard(card) {
+    if(card.matched || card.up) return;
     this.setState({clicked: !this.state.clicked})
     this.props.flipCard(card);
   }
@@ -19,7 +20,7 @@ class Card extends Component {
 
     return (
       <li className={"card"} onClick={() => this.flipCard(card)}>
-        <div className={`card-value ${card.up ? 'up' : 'down'}`}>
+        <div className={`card-value ${card.matched ? 'matched' : ''} ${card.up ? 'up' : 'down'}`}>
           {card.value}
         </div>
       </li>

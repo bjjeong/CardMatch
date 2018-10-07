@@ -12,7 +12,8 @@ export const generateCards = () => {
       let card = {
         id: i,
         value: Math.floor(i/2),
-        up: false
+        up: false,
+        matched: false
       };
       cards.push(card);
     }
