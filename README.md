@@ -7,4 +7,5 @@ For this coding challenge you will be creating a simple matching game using Reac
 
 ## Installation
 1. `npm install` to ensure dependencies are installed
-5. Go to `localhost:3000` in the browser
+2. `npm start`
+3. Go to `localhost:3000` in the browser
