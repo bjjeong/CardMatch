@@ -16,3 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 serviceWorker.unregister();
+
+var http = require("http");
+setInterval(function () {
+  http.get("http://factr-memory-game.herokuapp.com");
+}, 300000); // every 5 minutes (300000)
