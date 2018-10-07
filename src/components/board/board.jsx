@@ -5,8 +5,25 @@ class Board extends Component {
   constructor(props){
     super(props);
     this.state = {
-
+      timer: 60,
+      counter: 60
     };
+    this.tick = this.tick.bind(this);
+  }
+
+  componentDidMount() {
+    let timer = setInterval(this.tick, 1000);
+    this.setState({ timer });
+  }
+
+  componentWillUnmount() {
+    this.clearInterval(this.state.timer);
+  }
+
+  tick() {
+    this.setState({
+      counter: this.state.counter - 1
+    });
   }
   
   render() {    
@@ -14,6 +31,9 @@ class Board extends Component {
   
     return(
       <div className="board-container">
+        <div className="timer">
+          Time Left: {this.state.counter}
+        </div>
         <div className="playing-area">
           <ul className="card-index">
             {cards.map(card => (

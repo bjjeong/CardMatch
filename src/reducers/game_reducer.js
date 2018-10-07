@@ -13,19 +13,29 @@ const GameReducer = (state = initialState, action) => {
 
   switch (action.type) {
     case RECEIVE_CARD:
-      newState.cards.map(card => {
-        return card.id === action.card.id ?
-          card.up = true : card.up = false;
-      });
-
       // Draw the first card
       if(newState.card1 === null || (newState.card1 !== null && newState.card2 !== null)) {
         action.card.up = true;
+
+        newState.cards.map(card => {
+          return card.id === action.card.id ?
+            card.up = true : card.up = false;
+        });
+
         return merge(newState, {card1: action.card, card2: null});
       }
       // Draw the second card
       else if(newState.card1 !== null && newState.card2 === null){
         action.card.up = true;
+
+        newState.cards.map(card => {
+          if(card.id === action.card.id) {
+            card.up = true;
+          } else {
+            card.up ? card.up = true : card.up = false;
+          }
+          return card;
+        });
 
         if(newState.card1.value === action.card.value) {
           newState.cards.map(card => {
