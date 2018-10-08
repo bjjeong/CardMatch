@@ -6,7 +6,7 @@ class Board extends Component {
     super(props);
     this.state = {
       timer: 60,
-      counter: 60
+      counter: 30
     };
     this.tick = this.tick.bind(this);
   }
