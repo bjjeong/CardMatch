@@ -6,6 +6,7 @@ import configureStore from './store/store';
 import * as serviceWorker from './serviceWorker';
 
 document.addEventListener('DOMContentLoaded', () => {
+
   const root = document.getElementById('root');
   let store = configureStore();
 
