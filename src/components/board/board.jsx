@@ -21,10 +21,6 @@ class Board extends Component {
     this.clearInterval(this.state.timer);
   }
 
-  shouldComponentUpdate(nextProps) { // Rerender if there is a change in the cards
-    return (this.props.cards !== nextProps.cards);
-  }
-
   tick() {
     this.setState({
       counter: this.state.counter - 1
@@ -33,6 +29,17 @@ class Board extends Component {
   
   render() {    
     let { cards } = this.props;
+
+    // Check to see if all the cards have been "matched"
+  if(cards.every(card => card.matched === true)) {
+    return (
+      <div className="board-container">
+        <div className="message">
+          CONGRATULATIONS! YOU HAVE WON
+          </div>
+      </div>
+    );
+  }
 
     if(this.state.counter <= 0) {
       return(
