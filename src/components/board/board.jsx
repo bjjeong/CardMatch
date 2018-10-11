@@ -6,7 +6,8 @@ class Board extends Component {
     super(props);
     this.state = {
       timer: 60,
-      counter: 30
+      counter: 30,
+      numMatches: 0
     };
     this.tick = this.tick.bind(this);
   }
@@ -18,6 +19,10 @@ class Board extends Component {
 
   componentWillUnmount() {
     this.clearInterval(this.state.timer);
+  }
+
+  shouldComponentUpdate(nextProps) { // Rerender if there is a change in the cards
+    return (this.props.cards !== nextProps.cards);
   }
 
   tick() {
