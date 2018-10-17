@@ -31,16 +31,17 @@ class Board extends Component {
     let { cards } = this.props;
 
     // Check to see if all the cards have been "matched"
-  if(cards.every(card => card.matched === true)) {
-    return (
-      <div className="board-container">
-        <div className="message">
-          CONGRATULATIONS! YOU HAVE WON
-          </div>
-      </div>
-    );
-  }
+    if(cards.every(card => card.matched === true)) {
 
+      return (
+        <div className="board-container">
+          <div className="message">
+            CONGRATULATIONS! YOU HAVE WON
+          </div>
+        </div>
+      );
+    }
+    // Check if time has run out
     if(this.state.counter <= 0) {
       return(
         <div className="board-container">

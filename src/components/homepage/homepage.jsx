@@ -42,7 +42,7 @@ const Homepage = props => {
         <div className="modal-content">
           <h4><strong>How to Play!</strong></h4>
           <p>
-            This is a simple card-matching game built with React and Redux, created by me as a coding exercise for Factr.
+            This is a simple card-matching game built with React and Redux, created by Brian Jeong as a coding exercise for Factr.
             <br/>
             <br/>
             The rules of the game are simple - find all matching pairs of cards within the given time limit. Once a set of cards are matched, they will turn green.
