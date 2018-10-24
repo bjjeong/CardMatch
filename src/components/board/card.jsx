@@ -21,7 +21,7 @@ class Card extends Component {
     return (
       <li className={"card"} onClick={() => this.flipCard(card)}>
         <div className={`card-value ${card.matched ? 'matched' : ''} ${card.up ? 'up' : 'down'}`}>
-          {card.value}
+          <img src={`${card.photoURL}`} alt=""/>
         </div>
       </li>
     )

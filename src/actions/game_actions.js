@@ -8,16 +8,27 @@ export const flipCard = card => ({
 export const generateCards = () => {
     let cards = [];
 
-    for (let i = 0; i < 12; i++) {
-      let card = {
-        id: i,
-        value: Math.floor(i/2),
-        up: false,
-        matched: false
-      };
-      cards.push(card);
-    }
-    return shuffle(cards);
+    fetch('https://picsum.photos/list')
+      .then(images => {
+        images.json().then(res => {
+          let imageArr = shuffle(res);
+
+          for (let i = 0; i < 12; i++) {
+
+            let card = {
+              id: i,
+              value: Math.floor(i / 2),
+              photoURL: `https://picsum.photos/400/500?image=${imageArr[Math.floor(i/2)].id}`,
+              up: false,
+              matched: false
+            };
+            cards.push(card);
+          }
+          cards = shuffle(cards);
+        });
+    });
+
+    return cards;
 };
 
 const shuffle = (a) => {
@@ -27,3 +38,4 @@ const shuffle = (a) => {
   }
   return a;
 };
+

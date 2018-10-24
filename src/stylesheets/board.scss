@@ -50,15 +50,23 @@
   .up {
     background-color: rgb(255, 200, 0);
     font-size: 30px;
+    opacity: 1;
   }
 
   .down {
-    font-size: 0;
+    // font-size: 0;
+    opacity: 0;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
   }
 
   .matched {
     background-color: rgb(90, 180, 95);
     font-size: 30px;
+    opacity: 1;
   }
 
   .card-value {
