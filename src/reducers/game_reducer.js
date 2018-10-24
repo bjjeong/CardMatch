@@ -15,8 +15,6 @@ const GameReducer = (state = initialState, action) => {
     case RECEIVE_CARD:
       // Draw the first card
       if(newState.card1 === null || (newState.card1 !== null && newState.card2 !== null)) {
-        action.card.up = true;
-
         newState.cards.map(card => {
           return card.id === action.card.id ?
             card.up = true : card.up = false;
@@ -26,8 +24,6 @@ const GameReducer = (state = initialState, action) => {
       }
       // Draw the second card
       else if(newState.card1 !== null && newState.card2 === null){
-        action.card.up = true;
-
         newState.cards.map(card => {
           if(card.id === action.card.id) {
             card.up = true;

@@ -5,20 +5,20 @@ class Board extends Component {
   constructor(props){
     super(props);
     this.state = {
-      timer: 60,
-      counter: 30,
-      numMatches: 0
+      // timer: 60,
+      counter: 30
+      // numMatches: 0
     };
     this.tick = this.tick.bind(this);
   }
 
   componentDidMount() {
-    let timer = setInterval(this.tick, 1000);
-    this.setState({ timer });
+    this.timer = setInterval(this.tick, 1000);
+    // this.setState({ timer });
   }
 
   componentWillUnmount() {
-    this.clearInterval(this.state.timer);
+    this.clearInterval(this.timer);
   }
 
   tick() {
